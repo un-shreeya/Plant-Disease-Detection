@@ -1,19 +1,19 @@
-# ── Environment ───────────────────────────────────────────────────────────────
+# Environment
 .env
 *.env
 
-# ── Data (too large for git) ──────────────────────────────────────────────────
+# Data (too large for git)
 data/raw/
 data/processed/
 
-# ── Model Weights ─────────────────────────────────────────────────────────────
+# Model Weights
 models/saved/*.pth
 models/saved/*.pt
 
-# ── Evaluation Outputs ────────────────────────────────────────────────────────
+# Evaluation Outputs 
 evaluation/outputs/
 
-# ── Python ────────────────────────────────────────────────────────────────────
+# Python 
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -25,20 +25,20 @@ venv/
 env/
 .venv/
 
-# ── IDE ───────────────────────────────────────────────────────────────────────
+# IDE 
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# ── OS ────────────────────────────────────────────────────────────────────────
+# OS 
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ── Jupyter ───────────────────────────────────────────────────────────────────
+# Jupyter
 .ipynb_checkpoints/
 
-# ── Uploads ───────────────────────────────────────────────────────────────────
+# Uploads 
 uploads/
 temp/
