@@ -7,7 +7,6 @@ import torch
 import numpy as np
 from PIL import Image
 
-# Use absolute imports relative to project root
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -19,7 +18,6 @@ from chatbot.groq_chatbot import GroqChatbot
 
 router = APIRouter()
 
-# Global variables for models
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = None
 class_names = []
@@ -32,15 +30,12 @@ def load_model_if_needed():
     global model, class_names, gradcam_explainer
     if model is None:
         model_path = os.getenv("MODEL_PATH", "models/saved/best_model.pth")
-        
-        # Load class mapping
         try:
             with open("data/class_mapping.json", "r") as f:
                 mapping = json.load(f)
-                # Sort by key (which is string integer)
                 class_names = [mapping[str(i)] for i in range(len(mapping))]
         except Exception:
-            class_names = [f"Class_{i}" for i in range(38)] # Fallback
+            class_names = [f"Class_{i}" for i in range(38)] 
 
         if os.path.exists(model_path):
             checkpoint = torch.load(model_path, map_location=device, weights_only=False)
@@ -61,8 +56,6 @@ class ChatMessage(BaseModel):
 @router.post("/predict")
 async def predict_image(file: UploadFile = File(...)):
     load_model_if_needed()
-    
-    # Read and process image
     image_bytes = await file.read()
     try:
         pil_image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
@@ -70,9 +63,6 @@ async def predict_image(file: UploadFile = File(...)):
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid image file")
 
-    # --- Gemini Vision Pre-Check Gate ---
-    # Ask Gemini to classify the image BEFORE running the CNN.
-    # This catches insect pests and non-plant images that the CNN cannot handle.
     vision_result = chatbot.vision_checker.check_image(image_bytes)
     vision_category = vision_result.get('category', 'leaf_disease')
 
@@ -122,7 +112,6 @@ async def predict_image(file: UploadFile = File(...)):
             }
         }
 
-    # Prepare tensor
     from torchvision import transforms
     transform = transforms.Compose([
         transforms.Resize((256, 256)),
@@ -131,14 +120,11 @@ async def predict_image(file: UploadFile = File(...)):
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
     input_tensor = transform(pil_image).unsqueeze(0)
-
-    # 1. Grad-CAM & Prediction
     cam_result = gradcam_explainer.generate(input_tensor, original_image=original_img_np)
     pred_class_idx = cam_result['predicted_class']
     confidence = cam_result['confidence']
     class_name = class_names[pred_class_idx]
-    
-    # Check Confidence Threshold
+
     if confidence < 0.50:
         class_name = "Unrecognized / Low Confidence"
         severity_result = {"severity": "Unknown", "percentage": 0.0}
@@ -153,10 +139,7 @@ async def predict_image(file: UploadFile = File(...)):
             "weather_precautions": "N/A"
         }
     else:
-        # 2. Severity Estimation
         severity_result = severity_estimator.estimate(original_img_np)
-        
-        # 3. Recommendation
         recommendation = rec_engine.get_recommendation(class_name)
 
     return {
