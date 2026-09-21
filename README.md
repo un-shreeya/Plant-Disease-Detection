@@ -1,6 +1,6 @@
 # Leaf AI — Intelligent Plant Disease & Pest Advisory
 
-A deep learning web app that diagnoses plant leaf diseases using a trained CNN (EfficientNet-B3) and detects insect pests using Groq Vision AI (LLaMA-3.2). Built with FastAPI + vanilla JS frontend.
+A hybrid deep learning platform that uses Groq Vision AI (LLaMA-3.2 Vision) as an upstream guardrail to detect insect pests and non-plant uploads, routing valid leaf scans to a custom-trained PyTorch CNN (EfficientNet-B3) for 38-class disease classification, Grad-CAM explainability, and HSV severity estimation. Built with FastAPI and a responsive vanilla JS frontend.
 
 ---
 
@@ -26,9 +26,16 @@ Groq Vision Pre-Check
                     + AI Agronomist Chat
 ```
 
+## Screenshots:
+![Insect Attack1]([relative/path/to/image.pn](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210622.png))
+![Insect Attack1-AI chatbot Response]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210633.png))
+![Insect Attack1-AI chatbot Response contd.]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210651.png))
+![Insect Attack2]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210907.png))
+![Leaf Disease- Analysis + AI chatbot Response]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20211149.png))
+
 ---
 
-## Quick Start (after cloning)
+## After cloning
 
 ### 1. Prerequisites
 - Python 3.10+
