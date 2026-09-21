@@ -3,8 +3,7 @@ import json
 
 def generate_report():
     print("Generating comprehensive evaluation report...")
-    
-    # Load summary JSON
+
     summary_path = 'evaluation/outputs/evaluation_summary.json'
     if not os.path.exists(summary_path):
         print(f"Error: {summary_path} not found. Please run evaluate.py first.")
@@ -13,7 +12,6 @@ def generate_report():
     with open(summary_path, 'r') as f:
         summary = json.load(f)
 
-    # Load robustness JSON
     robust_path = 'evaluation/outputs/robustness_results.json'
     if not os.path.exists(robust_path):
         print(f"Error: {robust_path} not found. Please run evaluate.py first.")
