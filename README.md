@@ -27,11 +27,11 @@ Groq Vision Pre-Check
 ```
 
 ## Screenshots:
-![Insect Attack1]([relative/path/to/image.pn](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210622.png))
-![Insect Attack1-AI chatbot Response]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210633.png))
-![Insect Attack1-AI chatbot Response contd.]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210651.png))
-![Insect Attack2]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210907.png))
-![Leaf Disease- Analysis + AI chatbot Response]([relative/path/to/image.png](https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20211149.png))
+![Insect Attack1](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20210622.png)
+![Insect Attack1-AI chatbot Response]((https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210633.png))
+![Insect Attack1-AI chatbot Response contd.]((https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210651.png))
+![Insect Attack2]((https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20210907.png))
+![Leaf Disease- Analysis + AI chatbot Response]((https://github.com/un-shreeya/Plant-Disease-Detection/blob/4b92ee8771ec475d356f48c7c30544429795b332/Screenshot%202026-09-21%20211149.png))
 
 ---
 
