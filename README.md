@@ -26,12 +26,22 @@ Groq Vision Pre-Check
                     + AI Agronomist Chat
 ```
 
-## Screenshots:
-![Insect Attack1](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20210622.png)
-![Insect Attack1 AI chatbot Response](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20210633.png)
-![Insect Attack1 AI chatbot Response contd.](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20210651.png)
-![Insect Attack2](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20210907.png)
-![Leaf Disease Analysis + AI chatbot Response](https://github.com/un-shreeya/Plant-Disease-Detection/blob/main/Screenshot%202026-09-21%20211149.png)
+## Screenshots
+
+### 1. Insect Attack Diagnosis
+![Insect Attack Example 1](./Screenshot%202026-09-21%20210622.png)
+
+### 2. AI Chatbot Response
+![Insect Attack1 AI Chatbot Response](./Screenshot%202026-09-21%20210633.png)
+
+### 3. AI Chatbot Response (Contd.)
+![Insect Attack1 AI Chatbot Response](./Screenshot%202026-09-21%20210651.png)
+
+### 4. Secondary Pest Detection Example
+![Insect Attack Example 2](./Screenshot%202026-09-21%20210907.png)
+
+### 5. Plant Disease CNN Diagnosis & AI Advisory
+![Leaf Disease Analysis](./Screenshot%202026-09-21%20211149.png)
 
 ---
 
