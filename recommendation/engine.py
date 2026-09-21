@@ -18,7 +18,6 @@ class RecommendationEngine:
         if class_name in self.database:
             return self.database[class_name]
         
-        # Fallback for missing entries
         return {
             "crop": class_name.split("___")[0].replace("_", " "),
             "disease": class_name.split("___")[-1].replace("_", " "),
