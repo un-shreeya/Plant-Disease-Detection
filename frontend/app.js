@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         analyzeBtn.disabled = true;
         loading.style.display = 'block';
         resultsPanel.style.display = 'none';
+        document.getElementById('chat-history').innerHTML = ''; // Clear chat when new image analyzed
 
         const formData = new FormData();
         formData.append('file', currentImage);
@@ -100,10 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('res-confidence').textContent = isLeafDisease ? confPct + '%' : 'Vision AI';
 
         // --- Severity Bar ---
-        const sevSection = document.getElementById('res-sev-text').closest('.severity-section') ||
-                           document.getElementById('res-sev-text').parentElement;
+        const sevMeter = document.getElementById('res-sev-text').closest('.severity-meter') ||
+                         document.querySelector('.severity-meter');
         if (isLeafDisease && data.severity && data.severity.severity !== 'N/A') {
-            sevSection.style.display = '';
+            if (sevMeter) sevMeter.style.display = '';
             const sevVal = parseFloat(data.severity.percentage || 0).toFixed(1);
             const sevClass = data.severity.severity || 'Unknown';
             document.getElementById('res-sev-text').textContent = `${sevClass} (${sevVal}%)`;
@@ -111,9 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fill.style.width = `${Math.min(sevVal, 100)}%`;
             fill.style.background = sevVal < 10 ? '#4caf50' : sevVal < 30 ? '#ff9800' : '#f44336';
         } else {
-            document.getElementById('res-sev-text').textContent = 'Not applicable';
-            const fill = document.getElementById('res-sev-fill');
-            fill.style.width = '0%';
+            if (sevMeter) sevMeter.style.display = 'none';
         }
 
         // --- Grad-CAM ---
@@ -183,10 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Expose switchTab for inline onclick
-    window.switchTab = function(tabName) {
+    window.switchTab = function(tabName, evt) {
         document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
         document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
         document.getElementById('tab-' + tabName).style.display = 'block';
-        event.target.classList.add('active');
+        if (evt && evt.target) evt.target.classList.add('active');
     };
 });

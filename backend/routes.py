@@ -15,7 +15,7 @@ from models.efficientnet_model import create_model
 from models.gradcam import GradCAMExplainer
 from models.severity import SeverityEstimator
 from recommendation.engine import RecommendationEngine
-from chatbot.gemini_chatbot import GeminiChatbot
+from chatbot.groq_chatbot import GroqChatbot
 
 router = APIRouter()
 
@@ -26,7 +26,7 @@ class_names = []
 gradcam_explainer = None
 severity_estimator = SeverityEstimator()
 rec_engine = RecommendationEngine()
-chatbot = GeminiChatbot()
+chatbot = GroqChatbot()
 
 def load_model_if_needed():
     global model, class_names, gradcam_explainer
@@ -170,7 +170,7 @@ async def predict_image(file: UploadFile = File(...)):
     }
 
 @router.post("/chatbot")
-async def chat(chat_req: ChatMessage):
+def chat(chat_req: ChatMessage):
     response = chatbot.get_response(chat_req.message, chat_req.context)
     return {"reply": response}
 
