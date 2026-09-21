@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentImage = null;
     let currentContext = null;
 
-    // --- Upload Logic ---
     dropZone.addEventListener('click', () => fileInput.click());
     
     dropZone.addEventListener('dragover', (e) => {
@@ -52,14 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
         reader.readAsDataURL(file);
     }
 
-    // --- Analysis Logic ---
     analyzeBtn.addEventListener('click', async () => {
         if (!currentImage) return;
 
         analyzeBtn.disabled = true;
         loading.style.display = 'block';
         resultsPanel.style.display = 'none';
-        document.getElementById('chat-history').innerHTML = ''; // Clear chat when new image analyzed
+        document.getElementById('chat-history').innerHTML = ''; 
 
         const formData = new FormData();
         formData.append('file', currentImage);
@@ -87,20 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const detectionType = data.detection_type || 'leaf_disease';
         const isLeafDisease = detectionType === 'leaf_disease';
 
-        // --- Diagnosis Header ---
         const rawName = data.class_name || '';
         const displayName = rawName.includes('___')
             ? rawName.split('___').pop().replace(/_/g, ' ')
             : rawName;
 
-        // Add an icon prefix for non-disease detections
         const prefix = detectionType === 'insect_pest' ? '🐛 ' : detectionType === 'not_a_plant' ? '⚠️ ' : '';
         document.getElementById('res-disease').textContent = prefix + displayName;
 
         const confPct = (data.confidence * 100).toFixed(1);
         document.getElementById('res-confidence').textContent = isLeafDisease ? confPct + '%' : 'Vision AI';
 
-        // --- Severity Bar ---
         const sevMeter = document.getElementById('res-sev-text').closest('.severity-meter') ||
                          document.querySelector('.severity-meter');
         if (isLeafDisease && data.severity && data.severity.severity !== 'N/A') {
@@ -115,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sevMeter) sevMeter.style.display = 'none';
         }
 
-        // --- Grad-CAM ---
         const gradcamSection = document.getElementById('res-gradcam').closest('div') ||
                                document.getElementById('res-gradcam').parentElement;
         if (isLeafDisease && data.gradcam_overlay) {
@@ -124,8 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             gradcamSection.style.display = 'none';
         }
-
-        // --- Recommendation ---
+        
         const rec = data.recommendation;
         document.getElementById('res-chemical').textContent = rec.chemical_treatment;
         document.getElementById('res-organic').textContent = rec.organic_remedy;
@@ -139,14 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
             prevList.appendChild(li);
         });
 
-        // --- Chat Context ---
         document.getElementById('chat-context-disease').textContent = rec.disease;
 
         resultsPanel.style.display = 'block';
         resultsPanel.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // --- Chatbot Logic ---
     sendChatBtn.addEventListener('click', sendChatMessage);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendChatMessage();
@@ -181,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
-    // Expose switchTab for inline onclick
     window.switchTab = function(tabName, evt) {
         document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
         document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
