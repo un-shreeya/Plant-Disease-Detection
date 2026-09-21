@@ -1,4 +1,4 @@
-# 🌿 Leaf AI — Intelligent Plant Disease & Pest Advisory
+# Leaf AI — Intelligent Plant Disease & Pest Advisory
 
 A deep learning web app that diagnoses plant leaf diseases using a trained CNN (EfficientNet-B3) and detects insect pests using Groq Vision AI (LLaMA-3.2). Built with FastAPI + vanilla JS frontend.
 
@@ -56,13 +56,13 @@ python data/download_dataset.py
 
 ### 5. Train the model
 ```bash
-# Full training (~6 hours on CPU, ~30 min on GPU)
+# Full training (approx 6 hours on CPU, approx 30 min on GPU)
 python models/train.py
 
 # Quick test run (5% of data, 2 epochs)
 python models/train.py --quick
 ```
-> ⚠️ The trained model weights (`best_model.pth`) are not included in this repo due to file size. You must train first.
+The trained model weights (`best_model.pth`) are not included in this repo due to file size. The model has to be trained first.
 
 ### 6. Run the app
 ```bash
@@ -100,5 +100,5 @@ plant-disease-detection/
 ├── models/           # EfficientNet model, Grad-CAM, severity, training
 ├── recommendation/   # Disease database + recommendation engine
 ├── requirements.txt
-└── .env              # ← Create this yourself (never committed to git)
+└── .env              
 ```
