@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf AI - Intelligent Plant Disease Advisory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <header>
+        <h1>Leaf <span>AI</span></h1>
+        <p>Advanced Plant Pathology & Advisory System</p>
+    </header>
+
+    <main class="container">
+        <!-- Left Column: Upload -->
+        <section class="upload-section glass-panel">
+            <h2>Scan Plant Leaf</h2>
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p>Drag & drop image here</p>
+                    <span class="subtext">or click to browse</span>
+                </div>
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <img id="image-preview" src="" alt="Preview" style="display: none;">
+            </div>
+            <button id="analyze-btn" class="primary-btn" disabled>Analyze Leaf</button>
+            
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>AI is analyzing the leaf structure...</p>
+            </div>
+        </section>
+
+        <!-- Right Column: Results -->
+        <section class="results-section" id="results-panel" style="display: none;">
+            
+            <div class="result-card glass-panel highlight">
+                <div class="diagnosis-header">
+                    <div>
+                        <h3>Diagnosis</h3>
+                        <h2 id="res-disease" class="gradient-text">Late Blight</h2>
+                    </div>
+                    <div class="confidence-badge">
+                        <span id="res-confidence">98.5%</span> Confidence
+                    </div>
+                </div>
+                
+                <div class="severity-meter">
+                    <div class="severity-label">
+                        <span>Severity Estimate</span>
+                        <span id="res-sev-text">Moderate (22%)</span>
+                    </div>
+                    <div class="meter-bar">
+                        <div id="res-sev-fill" class="meter-fill" style="width: 22%; background: #ff9800;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2-col">
+                <div class="glass-panel">
+                    <h3>Explainability (Grad-CAM)</h3>
+                    <p class="subtext">Regions the AI focused on</p>
+                    <img id="res-gradcam" src="" alt="Grad-CAM Heatmap" class="gradcam-img">
+                </div>
+                
+                <div class="glass-panel tabs-panel">
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="switchTab('treatment')">Treatment</button>
+                        <button class="tab-btn" onclick="switchTab('prevention')">Prevention</button>
+                    </div>
+                    <div id="tab-treatment" class="tab-content active">
+                        <h4>Chemical</h4>
+                        <p id="res-chemical">Loading...</p>
+                        <h4>Organic</h4>
+                        <p id="res-organic">Loading...</p>
+                    </div>
+                    <div id="tab-prevention" class="tab-content" style="display: none;">
+                        <ul id="res-prevention-list"></ul>
+                        <h4>Weather Alert</h4>
+                        <p id="res-weather">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="glass-panel chatbot-panel">
+                <div class="chat-header">
+                    <h3>Ask the AI Agronomist</h3>
+                </div>
+                <div class="chat-history" id="chat-history">
+                    <div class="message ai-message">Hello! I'm your AI assistant. I see you've scanned a leaf with <span id="chat-context-disease">this disease</span>. Ask me anything about treatment or prevention!</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="e.g., Can this spread to other plants?">
+                    <button id="send-chat-btn" class="primary-btn small">Send</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

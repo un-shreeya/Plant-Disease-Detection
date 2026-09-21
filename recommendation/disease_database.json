@@ -1,0 +1,200 @@
+{
+  "Apple___Apple_scab": {
+    "crop": "Apple",
+    "disease": "Apple Scab",
+    "symptoms": [
+      "Olive-green to black, velvety spots on leaves.",
+      "Leaves may yellow and drop prematurely.",
+      "Scabby, dark, corky spots on fruit."
+    ],
+    "cause": "Fungus (Venturia inaequalis)",
+    "chemical_treatment": "Apply fungicides containing captan, myclobutanil, or mancozeb early in the season.",
+    "organic_remedy": "Use sulfur-based sprays or neem oil. Ensure good air circulation by pruning.",
+    "prevention": [
+      "Rake and destroy fallen leaves to reduce overwintering fungi.",
+      "Plant scab-resistant apple varieties.",
+      "Prune trees to improve air circulation and sunlight penetration."
+    ],
+    "weather_precautions": "Fungus thrives in cool, wet spring weather."
+  },
+  "Apple___Black_rot": {
+    "crop": "Apple",
+    "disease": "Black Rot",
+    "symptoms": [
+      "Frogeye leaf spots: purple spots with tan centers.",
+      "Brown to black rot on fruit, often with concentric rings.",
+      "Cankers on branches."
+    ],
+    "cause": "Fungus (Botryosphaeria obtusa)",
+    "chemical_treatment": "Fungicides containing captan or thiophanate-methyl.",
+    "organic_remedy": "Remove and destroy infected plant parts (mummies, cankers, dead wood).",
+    "prevention": [
+      "Prune out dead or diseased wood during the dormant season.",
+      "Remove mummified fruit.",
+      "Maintain tree vigor."
+    ],
+    "weather_precautions": "Infection often occurs during warm, wet weather."
+  },
+  "Apple___Cedar_apple_rust": {
+    "crop": "Apple",
+    "disease": "Cedar Apple Rust",
+    "symptoms": [
+      "Pale yellow spots on the upper surface of leaves that turn orange.",
+      "Orange, tube-like structures on the underside of leaves.",
+      "Yellow-orange spots on fruit."
+    ],
+    "cause": "Fungus (Gymnosporangium juniperi-virginianae)",
+    "chemical_treatment": "Fungicides like myclobutanil applied during the pink bud to petal fall stages.",
+    "organic_remedy": "Remove nearby eastern red cedar trees (the alternate host).",
+    "prevention": [
+      "Plant rust-resistant apple varieties.",
+      "Remove alternate hosts within a 1-2 mile radius if possible."
+    ],
+    "weather_precautions": "Spores spread during wet spring weather."
+  },
+  "Apple___healthy": {
+    "crop": "Apple",
+    "disease": "Healthy",
+    "symptoms": ["None. Leaves are uniformly green and healthy."],
+    "cause": "N/A",
+    "chemical_treatment": "None required.",
+    "organic_remedy": "None required.",
+    "prevention": [
+      "Continue regular watering and fertilization schedules.",
+      "Maintain good orchard hygiene."
+    ],
+    "weather_precautions": "Standard care."
+  },
+  "Corn_(maize)___Common_rust_": {
+    "crop": "Corn",
+    "disease": "Common Rust",
+    "symptoms": [
+      "Small, powdery, cinnamon-brown pustules on both upper and lower leaf surfaces.",
+      "Leaves may yellow and dry out."
+    ],
+    "cause": "Fungus (Puccinia sorghi)",
+    "chemical_treatment": "Fungicides containing strobilurins or triazoles if infection is severe early in the season.",
+    "organic_remedy": "Ensure adequate spacing for airflow.",
+    "prevention": [
+      "Plant rust-resistant corn hybrids.",
+      "Crop rotation may slightly help, though spores blow in from warmer regions."
+    ],
+    "weather_precautions": "Thrives in cool (16-25°C) and humid weather."
+  },
+  "Corn_(maize)___healthy": {
+    "crop": "Corn",
+    "disease": "Healthy",
+    "symptoms": ["None. Plant is healthy."],
+    "cause": "N/A",
+    "chemical_treatment": "None required.",
+    "organic_remedy": "None required.",
+    "prevention": ["Maintain standard agricultural practices."],
+    "weather_precautions": "Standard care."
+  },
+  "Potato___Early_blight": {
+    "crop": "Potato",
+    "disease": "Early Blight",
+    "symptoms": [
+      "Dark brown to black spots on older leaves with concentric rings (target-board appearance).",
+      "Lower leaves yellow and drop off."
+    ],
+    "cause": "Fungus (Alternaria solani)",
+    "chemical_treatment": "Fungicides like chlorothalonil or mancozeb applied preventatively.",
+    "organic_remedy": "Copper-based fungicides. Improve airflow and avoid overhead watering.",
+    "prevention": [
+      "Practice 3-4 year crop rotation.",
+      "Remove and destroy infected plant debris.",
+      "Ensure plants are well-fertilized to reduce stress."
+    ],
+    "weather_precautions": "Warm temperatures (24-29°C) alternating with wet/dry periods favor the disease."
+  },
+  "Potato___Late_blight": {
+    "crop": "Potato",
+    "disease": "Late Blight",
+    "symptoms": [
+      "Water-soaked, pale green to dark brown spots on leaves.",
+      "White fungal growth on the underside of leaves in wet conditions.",
+      "Tubers develop dark, reddish-brown, dry rot."
+    ],
+    "cause": "Oomycete (Phytophthora infestans) - The cause of the Irish Potato Famine",
+    "chemical_treatment": "Systemic fungicides like mefenoxam or chlorothalonil. Urgent application needed.",
+    "organic_remedy": "Copper sprays can offer preventative protection. Destroy infected plants immediately.",
+    "prevention": [
+      "Plant certified disease-free seed potatoes.",
+      "Destroy volunteer potatoes and cull piles.",
+      "Hilling soil up around the base of plants protects tubers."
+    ],
+    "weather_precautions": "Cool, wet, and humid weather drives rapid spread."
+  },
+  "Potato___healthy": {
+    "crop": "Potato",
+    "disease": "Healthy",
+    "symptoms": ["None."],
+    "cause": "N/A",
+    "chemical_treatment": "None required.",
+    "organic_remedy": "None required.",
+    "prevention": ["Maintain good crop rotation and watering practices."],
+    "weather_precautions": "Standard care."
+  },
+  "Tomato___Bacterial_spot": {
+    "crop": "Tomato",
+    "disease": "Bacterial Spot",
+    "symptoms": [
+      "Small, dark, water-soaked spots on leaves.",
+      "Spots may have a yellow halo.",
+      "Scab-like lesions on fruit."
+    ],
+    "cause": "Bacteria (Xanthomonas campestris pv. vesicatoria)",
+    "chemical_treatment": "Copper-based bactericides combined with mancozeb.",
+    "organic_remedy": "Remove infected leaves. Avoid overhead watering.",
+    "prevention": [
+      "Use disease-free seed and transplants.",
+      "Practice crop rotation (do not plant tomatoes or peppers in the same spot for 2-3 years)."
+    ],
+    "weather_precautions": "Spreads rapidly during periods of high moisture and warm temperatures."
+  },
+  "Tomato___Early_blight": {
+    "crop": "Tomato",
+    "disease": "Early Blight",
+    "symptoms": [
+      "Dark, concentric rings on older leaves.",
+      "Leaves turn yellow and fall off.",
+      "Dark, leathery lesions at the stem end of fruit."
+    ],
+    "cause": "Fungus (Alternaria solani)",
+    "chemical_treatment": "Fungicides containing chlorothalonil or copper.",
+    "organic_remedy": "Neem oil or copper fungicides. Mulch around base of plants.",
+    "prevention": [
+      "Remove lower leaves to prevent soil splash.",
+      "Stake or cage plants for better airflow."
+    ],
+    "weather_precautions": "Favored by warm temperatures and high humidity/frequent rain."
+  },
+  "Tomato___Late_blight": {
+    "crop": "Tomato",
+    "disease": "Late Blight",
+    "symptoms": [
+      "Large, dark, water-soaked lesions on leaves and stems.",
+      "White fuzzy growth on undersides of leaves.",
+      "Firm, dark brown, greasy spots on fruit."
+    ],
+    "cause": "Oomycete (Phytophthora infestans)",
+    "chemical_treatment": "Fungicides like chlorothalonil. Apply at first sign of disease.",
+    "organic_remedy": "Copper fungicides. Destroy infected plants immediately.",
+    "prevention": [
+      "Ensure good air circulation.",
+      "Avoid overhead watering."
+    ],
+    "weather_precautions": "Cool, wet nights and warm, humid days."
+  },
+  "Tomato___healthy": {
+    "crop": "Tomato",
+    "disease": "Healthy",
+    "symptoms": ["None."],
+    "cause": "N/A",
+    "chemical_treatment": "None required.",
+    "organic_remedy": "None required.",
+    "prevention": ["Maintain standard care."],
+    "weather_precautions": "Standard care."
+  }
+}
